@@ -486,6 +486,7 @@
     background: var(--bs-white);
     box-shadow: inset 0 0 45px rgba(0, 0, 0, .1);
     transition: 0.5s;
+    min-height: 515px;
 }
 
 .blog .blog-item a {
@@ -500,10 +501,16 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    width: 100%; /* Ensure full width */
+    height: 250px; /* Set a fixed height */
 }
 
 .blog .blog-item .blog-img img {
     transition: 0.5s;
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Ensure full height */
+    max-width: 100%; /* Prevent overscaling */
+    object-fit: contain; /* Ensure the full image is visible */
 }
 
 .blog .blog-item:hover .blog-img img {
@@ -552,10 +559,10 @@
 .blog .owl-nav .owl-prev {
     position: absolute;
     top: -58px;
-    left: 0;
+    left: -24px;
     background: var(--bs-primary);
     color: var(--bs-white);
-    padding: 6px 35px;
+    padding: 16px 24px;
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -568,10 +575,10 @@
 .blog .owl-nav .owl-next {
     position: absolute;
     top: -58px;
-    right: 0;
+    right: -24px;
     background: var(--bs-primary);
     color: var(--bs-white);
-    padding: 6px 35px;
+    padding: 16px 24px;
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -910,3 +917,27 @@
 /*** copyright end ***/
 
 
+.blog-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-carousel .owl-nav button {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.blog-carousel .owl-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
